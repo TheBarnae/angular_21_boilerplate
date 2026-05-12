@@ -2,7 +2,7 @@
     <div class="m-3">
         <div *ngFor="let alrt of alerts" class="{{cssClasses(alert)}}">
             <span [innerHTML]="alrt.message">
-                <button class="btn-close" (click)="removeAlert(alert)"></button>
+                <s class="btn-close" (click)="removeAlert(alert)" title="Close alert"></button>
             </span>
         </div>
     </div>
