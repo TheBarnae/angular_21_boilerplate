@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular_21_boilerplate": {
+    "auth-boilerplate": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular_21_boilerplate",
+            "outputPath": "dist/auth-boilerplate",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,12 +27,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -62,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular_21_boilerplate:build:production"
+              "buildTarget": "auth-boilerplate:build:production"
             },
             "development": {
-              "buildTarget": "angular_21_boilerplate:build:development"
+              "buildTarget": "auth-boilerplate:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +68,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angular_21_boilerplate:build"
+            "buildTarget": "auth-boilerplate:build"
           }
         },
         "test": {
@@ -96,5 +91,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "c4181323-010a-4dec-bd14-115703e7b961"
   }
 }

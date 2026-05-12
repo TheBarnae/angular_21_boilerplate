@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
-})
+import { AccountService } from './_services';
+import { Account, Role } from './_models';
+
+@Component({ selector: 'app-root', templateUrl: 'app.component.html', standalone: false })
 export class AppComponent {
-  title = 'angular_21_boilerplate';
+    Role = Role;
+    account?: Account | null;
+
+    constructor(private accountService: AccountService) {
+        this.accountService.account.subscribe(x => this.account = x);
+    }
+
+    logout() {
+        this.accountService.logout();
+    }
 }
